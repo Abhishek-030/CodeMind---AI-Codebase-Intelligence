@@ -25,8 +25,13 @@ export default function Sidebar({ repos, activeRepo, onSelectRepo, onDeleteRepo,
           className="btn btn-primary"
           style={{ width: '100%', justifyContent: 'center' }}
           onClick={onAddRepo}
+          id="load-repo-btn"
         >
-          + Load Repository
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+            <line x1="12" y1="5" x2="12" y2="19" />
+            <line x1="5" y1="12" x2="19" y2="12" />
+          </svg>
+          Load Repository
         </button>
       </div>
 
@@ -37,10 +42,11 @@ export default function Sidebar({ repos, activeRepo, onSelectRepo, onDeleteRepo,
               textAlign: 'center',
               color: 'var(--text-muted)',
               fontSize: 12,
-              padding: '20px 0',
-              lineHeight: 1.8,
+              padding: '28px 12px',
+              lineHeight: 1.9,
             }}
           >
+            <div style={{ fontSize: 28, marginBottom: 10, opacity: 0.5 }}>📂</div>
             No repositories yet.
             <br />
             Load one to get started.
@@ -62,7 +68,9 @@ export default function Sidebar({ repos, activeRepo, onSelectRepo, onDeleteRepo,
               >
                 ✕
               </button>
-              <div className="repo-name" title={repo.name}>📦 {repo.name}</div>
+              <div className="repo-name" title={repo.name}>
+                <span style={{ marginRight: 6 }}>📦</span>{repo.name}
+              </div>
               <div className="repo-stats">
                 <span>{repo.file_count} files</span>
                 {repo.chunk_count > 0 && <span>· {repo.chunk_count} chunks</span>}
@@ -92,16 +100,17 @@ export default function Sidebar({ repos, activeRepo, onSelectRepo, onDeleteRepo,
         )}
       </div>
 
-      <div
-        style={{
-          padding: '12px 16px',
-          borderTop: '1px solid var(--glass-border)',
-          fontSize: 11,
-          color: 'var(--text-muted)',
-        }}
-      >
-        <div>Powered by Gemini 1.5 Flash</div>
-        <div style={{ marginTop: 2 }}>ChromaDB · tree-sitter · NetworkX</div>
+      <div className="sidebar-footer">
+        <div className="sidebar-footer-powered">
+          <span>⚡</span>
+          <span>Powered by Gemini 1.5 Flash</span>
+        </div>
+        <div className="sidebar-footer-stack">
+          <span className="stack-tag">ChromaDB</span>
+          <span className="stack-tag">tree-sitter</span>
+          <span className="stack-tag">NetworkX</span>
+          <span className="stack-tag">FastAPI</span>
+        </div>
       </div>
     </div>
   );

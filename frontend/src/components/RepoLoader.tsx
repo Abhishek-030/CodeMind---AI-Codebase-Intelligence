@@ -110,7 +110,7 @@ export default function RepoLoader({ onClose, onIngestUrl, onIngestZip }: Props)
             onDrop={handleDrop}
             onClick={() => !loading && fileRef.current?.click()}
           >
-            <div style={{ fontSize: 28 }}>📦</div>
+            <span className="drop-zone-icon">📦</span>
             <div className="drop-zone-text">
               {loading
                 ? 'Uploading...'

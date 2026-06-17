@@ -110,7 +110,7 @@ export default function ChatInterface({ messages, isReady, onSend, onSuggestion 
           >
             🔍 Debug
           </button>
-          <span style={{ fontSize: 11, color: 'var(--text-muted)', marginLeft: 4, alignSelf: 'center' }}>
+          <span className="mode-description">
             {mode === 'debug' ? 'Agentic multi-step reasoning' : 'Semantic Q&A with sources'}
           </span>
         </div>
