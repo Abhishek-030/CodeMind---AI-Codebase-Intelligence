@@ -96,7 +96,7 @@ export default function ChatInterface({ messages, isReady, onSend, onSuggestion 
         <div ref={bottomRef} />
       </div>
 
-      <div className="chat-input-area">
+      <div className={`chat-input-area${isStreaming ? ' streaming' : ''}`}>
         <div className="mode-selector">
           <button
             className={`mode-btn ${mode === 'ask' ? 'active' : ''}`}
