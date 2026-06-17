@@ -1939,7 +1939,7 @@ button, input, textarea, a {
 /* ---- CHAT INTERFACE ---- */
 
 /* Chat input area — animated sweeping gradient top bar
-   Default: slow drift (14s). Streaming: fast pulse (1.5s). */
+   Default: slow drift (45s). Streaming: fast pulse (1.5s). */
 .chat-input-area::before {
   content: '';
   position: absolute;
@@ -1957,7 +1957,7 @@ button, input, textarea, a {
   );
   background-size: 200% 100%;
   /* slow idle drift */
-  animation: borderLineSweep 14s linear infinite;
+  animation: borderLineSweep 45s linear infinite;
   border-radius: 0;
   transition: opacity 0.4s ease;
 }
